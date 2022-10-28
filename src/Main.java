@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,5 +21,37 @@ public class Main {
         lune.augmentePopulation(150);
         System.out.println(terre);
         System.out.println(lune);
+
+        ArrayList<Planete> systemeSolaire = new ArrayList<>();
+
+        String nom[]={"Mercure","Venus","Terre","Mars","Jupiter","Saturne","Uranus","Neptune" };
+
+        Random rd = new Random();
+
+        for(String s : nom){
+            systemeSolaire.add(new Planete(s,rd.nextInt(100000),rd.nextInt(100000000),"Tellurique"));
+        }
+
+        String satt[]={"Lune","Io","Pluton","Europe"};
+        for(String s : satt){
+            systemeSolaire.add(new Satellite(s,rd.nextInt(100000),
+                    rd.nextInt(100000000),
+                    systemeSolaire.get(rd.nextInt(8))));
+        }
+
+        for (Planete p : systemeSolaire)
+        {
+            p.augmentePopulation(rd.nextInt(200));
+        }
+        for (Planete p : systemeSolaire)
+        {
+            p.augmentePopulation(rd.nextInt(200));
+        }
+
+        for (Planete p : systemeSolaire)
+        {
+            System.out.println(p);
+        }
+
     }
 }

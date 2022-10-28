@@ -12,9 +12,6 @@ public class Satellite extends Planete{
     public String toString() {
         return "Satellite{" +
                 "nom='" + nom + '\'' +
-                ", diametre=" + diametre +
-                ", masse=" + masse +
-                ", etat='" + etat + '\'' +
                 ", population=" + population +
                 ", centre=" + centre +
                 '}';

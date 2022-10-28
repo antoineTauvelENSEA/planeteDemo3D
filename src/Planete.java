@@ -22,9 +22,6 @@ public class Planete implements MouseMotionListener {
     public String toString() {
         return "Planete{" +
                 "nom='" + nom + '\'' +
-                ", diametre=" + diametre +
-                ", masse=" + masse +
-                ", etat='" + etat + '\'' +
                 ", population=" + population +
                 '}';
     }
