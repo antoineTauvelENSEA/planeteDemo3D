@@ -5,14 +5,18 @@ public class Main {
         Planete terre= new Planete ("Terre",11000,5e27,"Tellurique");
         Planete mars= new Planete ("Mars",8000,3e27,"Tellurique");
 
-        mars=terre;
-        terre.population=2;
+        terre.augmentePopulation(100);
 
-        System.gc();
+        Satellite lune = new Satellite("Lune",3400, 7.6e22,terre);
 
         System.out.println(terre);
         System.out.println(mars);
+        System.out.println(lune);
 
         System.out.println("Nombre de planete : "+terre.nombreDePlanete);
+
+        lune.augmentePopulation(150);
+        System.out.println(terre);
+        System.out.println(lune);
     }
 }

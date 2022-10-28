@@ -1,10 +1,13 @@
-public class Planete {
-    private final String nom;
-    private final double diametre;
-    private final double masse;
-    private final String etat;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+
+public class Planete implements MouseMotionListener {
+    protected final String nom;
+    protected final double diametre;
+    protected final double masse;
+    protected final String etat;
     static public int nombreDePlanete=0;
-    public int population;
+    protected int population;
 
     public Planete(String nom, double diametre, double masse, String etat) {
         this.nom = nom;
@@ -28,5 +31,19 @@ public class Planete {
     @Override
     public void finalize(){
         nombreDePlanete--;
+    }
+
+    public void augmentePopulation( int nouveauxHabitants){
+        this.population+=nouveauxHabitants;
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+
     }
 }
